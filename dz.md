@@ -244,6 +244,94 @@ LEFT JOIN ослы o ON pa.id = o.id;
 ```
 
 #### 13.Создать класс с Инкапсуляцией методов и наследованием по диаграмме.
+```java
+public class Animal {
+    private String name;
+    private String dateOfBirth;
+
+    public Animal(String name, String dateOfBirth) {
+        this.name = name;
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+}
+
+public class HomeAnimals extends Animal {
+    private String command;
+
+    public HomeAnimals(String name, String dateOfBirth, String command) {
+        super(name, dateOfBirth);
+        this.command = command;
+    }
+
+    public String getCommand() {
+        return command;
+    }
+
+    public void setCommand(String command) {
+        this.command = command;
+    }
+}
+
+public class PackAnimals extends Animal {
+    public PackAnimals(String name, String dateOfBirth) {
+        super(name, dateOfBirth);
+    }
+}
+
+public class Dog extends HomeAnimals {
+    public Dog(String name, String dateOfBirth, String command) {
+        super(name, dateOfBirth, command);
+    }
+}
+
+public class Cat extends HomeAnimals {
+    public Cat(String name, String dateOfBirth, String command) {
+        super(name, dateOfBirth, command);
+    }
+}
+
+public class Hamster extends HomeAnimals {
+    public Hamster(String name, String dateOfBirth, String command) {
+        super(name, dateOfBirth, command);
+    }
+}
+
+public class Horse extends PackAnimals {
+    public Horse(String name, String dateOfBirth) {
+        super(name, dateOfBirth);
+    }
+}
+
+public class Camel extends PackAnimals {
+    public Camel(String name, String dateOfBirth) {
+        super(name, dateOfBirth);
+    }
+}
+
+public class Donkey extends PackAnimals {
+    public Donkey(String name, String dateOfBirth) {
+        super(name, dateOfBirth);
+    }
+}
+```
+---
+---
 #### 14. Написать программу, имитирующую работу реестра домашних животных. В программе должен быть реализован следующий функционал:
 #### 14.1 Завести новое животное
 #### 14.2 определять животное в правильный класс
